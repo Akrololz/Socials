@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akrololz Links</title>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 30px 15px;
+      min-height: 100vh;
+      overflow-x: hidden;
+      overflow-y: auto;
+      position: relative;
+    }
+
+    /* Звёздное небо */
+    .stars {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+    .star {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: twinkle 3s infinite ease-in-out, drift linear infinite;
+    }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+    @keyframes drift {
+      from { transform: translate(0, 0); }
+      to { transform: translate(-50px, 100px); }
+    }
+
+    /* Аватар */
+    img.avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      animation: neonPulse 3s infinite;
+    }
+    @keyframes neonPulse {
+      0% { box-shadow: 0 0 15px #ff0044; }
+      50% { box-shadow: 0 0 40px #ff3399; }
+      100% { box-shadow: 0 0 15px #ff0044; }
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
+    }
+
+    /* Анимация иконок */
+    @keyframes iconBounce {
+      0%   { transform: translateY(0) scale(1); }
+      25%  { transform: translateY(-3px) scale(1.05); }
+      50%  { transform: translateY(0) scale(1); }
+      75%  { transform: translateY(-2px) scale(1.03); }
+      100% { transform: translateY(0) scale(1); }
+    }
+    .btn:hover i {
+      animation: iconBounce 0.6s ease-in-out;
+    }
+
+    /* Кнопки */
+    .link-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      margin: 25px 0;
+    }
+    .btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 22px;
+      width: 260px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      border-radius: 12px;
+      text-decoration: none;
+      overflow: hidden;
+      z-index: 1;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn i {
+      font-size: 18px;
+    }
+    .btn::before {
+      content: "";
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: rgba(255,255,255,0.3);
+      transform: skewX(-20deg);
+      transition: left 0.5s ease;
+      z-index: -1;
+    }
+    .btn:hover::before { left: 200%; }
+    .btn:hover { transform: scale(1.05); }
+
+    /* Цвета и подсветка */
+    .telegram { background: #0088cc; }
+    .telegram:hover { box-shadow: 0 0 20px #0088cc, 0 0 40px #00c6ff; }
+
+    .twitch { background: #9146FF; }
+    .twitch:hover { box-shadow: 0 0 20px #9146FF, 0 0 40px #b388ff; }
+
+    .youtube { background: #FF0000; }
+    .youtube:hover { box-shadow: 0 0 20px #FF0000, 0 0 40px #ff4d4d; }
+
+    .discord { background: #5865F2; }
+    .discord:hover { box-shadow: 0 0 20px #5865F2, 0 0 40px #8796ff; }
+
+    .x { background: #000; border: 2px solid #fff; }
+    .x:hover { box-shadow: 0 0 20px #fff, 0 0 40px #666; }
+
+    .boosty { background: #FF5500; }
+    .boosty:hover { box-shadow: 0 0 20px #FF5500, 0 0 40px #ff884d; }
+
+    .vk { background: #0077ff; }
+    .vk:hover { box-shadow: 0 0 20px #0077ff, 0 0 40px #66aaff; }
+
+    .insta { background: linear-gradient(45deg, #feda75, #d62976, #962fbf, #4f5bd5); }
+    .insta:hover { box-shadow: 0 0 20px #d62976, 0 0 40px #962fbf; }
+  </style>
+</head>
+<body>
+
+  <!-- Звёздный фон -->
+  <div class="stars" id="stars"></div>
+
+  <!-- Аватар -->
+  <img src="стописят.png" alt="Akrololz Avatar" class="avatar">
+
+  <h1>🌌 Akrololz Links</h1>
+
+  <!-- Кнопки -->
+  <div class="link-buttons">
+    <a href="https://t.me/akrololz" target="_blank" class="btn telegram"><i class="fab fa-telegram"></i> Telegram</a>
+    <a href="https://twitch.tv/akrololz" target="_blank" class="btn twitch"><i class="fab fa-twitch"></i> Twitch</a>
+    <a href="https://youtube.com/@akrololz" target="_blank" class="btn youtube"><i class="fab fa-youtube"></i> YouTube</a>
+    <a href="https://discord.gg/akrololz" target="_blank" class="btn discord"><i class="fab fa-discord"></i> Discord</a>
+    <a href="https://x.com/akrololz" target="_blank" class="btn x"><i class="fab fa-x-twitter"></i> X</a>
+    <a href="https://boosty.to/akrololz" target="_blank" class="btn boosty"><i class="fas fa-fire"></i> Boosty</a>
+    <a href="https://vk.com/akrololz" target="_blank" class="btn vk"><i class="fab fa-vk"></i> VK</a>
+    <a href="https://instagram.com/akrololz" target="_blank" class="btn insta"><i class="fab fa-instagram"></i> Instagram</a>
+  </div>
+
+  <script>
+    // Генерация звезд
+    const starsContainer = document.getElementById("stars");
+    for (let i = 0; i < 120; i++) {
+      const star = document.createElement("div");
+      star.className = "star";
+      const size = Math.random() * 3 + 1; // размер звезды
+      star.style.width = size + "px";
+      star.style.height = size + "px";
+      star.style.top = Math.random() * 100 + "%";
+      star.style.left = Math.random() * 100 + "%";
+      star.style.animationDuration = (2 + Math.random() * 4) + "s, " + (20 + Math.random() * 40) + "s";
+      starsContainer.appendChild(star);
+    }
+  </script>
+
+</body>
+</html>
